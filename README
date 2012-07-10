@@ -1,0 +1,26 @@
+##
+ #  
+ #                      RS232-SigmaKoki
+ #    
+ #  Ruby interface to Windows Serial Port API
+ #  
+ #  author      hugo benichi
+ #  email       hugo.benichi@m4x.org
+ #  copyright   2012 hugo benichi  
+ #  version     0.1.0
+ #
+ ##
+ 
+  installation:  
+ 
+    run in the root directory
+      rake gem_install
+    
+    it will compile the gem library and produce a .gem package for ruby
+    it will then install the .gem automatically
+    
+  usage: 
+  
+    cf test/test_rs232-sigmakoki.rb
+    
+    the list of commands is
