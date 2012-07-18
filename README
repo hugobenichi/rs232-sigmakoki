@@ -24,3 +24,16 @@
     cf test/test_rs232-sigmakoki.rb
     
     the list of commands is
+      
+      home                # brings back both state to mechanical origin
+      stop                # stop with deceleration
+      stop!               # emergency stop
+      status              # current state status
+      rom                 # internal rom version
+      ready?
+      busy?               # is the stage ready to accept the next command
+      jog '++'|'++'|'+-'  # slowly moves both stages in + or - direction
+      move a, b           # move stage 1 of a steps, and stage 2 of b steps (b optional)  
+      move! a, b          # same as move, but wait until the stages are ready             
+      position            # return the position of both stages
+      position_of i       # return the position of stage i (1,2)

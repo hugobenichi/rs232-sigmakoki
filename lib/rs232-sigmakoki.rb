@@ -46,13 +46,25 @@ class SigmaKoki
     wait
   end
   
-  def position_of chan
-    self.status.gsub(' ','').split(',')[chan-1].to_i
+  def amove *step_args
+    move *self.position.map { |x|
+      y = step_args.shif
+      y.is_a? Fixnum ? 0 : y-x
+    }
   end
 
+  def amove! *step_args
+    move_absolute *step_args
+    wait
+  end
+  
   def position
     self.status.gsub(' ','').split(',').map{|x| x.to_i}[0..1]
   end  
+  
+  def position_of chan
+    self.status.gsub(' ','').split(',')[chan-1].to_i
+  end
   
   def initialize address, params = {}
     @comm = RS232.new address, params
