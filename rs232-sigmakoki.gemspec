@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
 
   spec.name        = 'rs232-sigmakoki'
-  spec.version     = '0.1.0'
+  spec.version     = '0.1.2'
   spec.date        = '2012-07-10'
   spec.summary     = "Ruby interface to SigmaKoki step motor controllers over the serial interface"
   spec.description = "Allows to script usage of the SigmaKoki step motor controllers with simple commands and without serial port troubles"

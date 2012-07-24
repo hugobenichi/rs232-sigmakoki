@@ -35,6 +35,7 @@ class SigmaKoki
 
       #main command to rotate the plates
   def move step1, step2 = 0
+	  step1 = 0 if step1.nil?
     s1, s2 = step1 > 0 ? "+" : "-", step2 > 0 ? "+" : "-"
     command = "M:W%sP%i%sP%i" % [s1,step1.abs,s2,step2.abs]
     @comm.write command
@@ -49,12 +50,12 @@ class SigmaKoki
   def amove *step_args
     move *self.position.map { |x|
       y = step_args.shif
-      y.is_a? Fixnum ? 0 : y-x
+      (y.is_a? Fixnum) ? y-x : 0
     }
   end
 
   def amove! *step_args
-    move_absolute *step_args
+    amove *step_args
     wait
   end
   
