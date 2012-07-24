@@ -49,13 +49,18 @@ class SigmaKoki
   
   def amove *step_args
     move *self.position.map { |x|
-      y = step_args.shif
+      y = step_args.shift
       (y.is_a? Fixnum) ? y-x : 0
     }
   end
 
   def amove! *step_args
     amove *step_args
+    wait
+  end
+  
+  def home!
+    home
     wait
   end
   
