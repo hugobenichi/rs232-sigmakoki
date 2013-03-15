@@ -1,5 +1,10 @@
 require 'rs232-sigmakoki'
 
+# A simple test program to confirm the good communication with the 
+# plate rotator over serial port.
+#
+# By default the port name used is 'COM1'
+
 plate = SigmaKoki.new 'COM1'
 
 plate.home

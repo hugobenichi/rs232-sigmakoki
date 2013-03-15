@@ -1,39 +1,40 @@
-##
- #  
- #                      RS232-SigmaKoki
- #    
- #  Ruby interface to Windows Serial Port API
- #  
- #  author      hugo benichi
- #  email       hugo.benichi@m4x.org
- #  copyright   2012 hugo benichi  
- #  version     0.1.3
- #
- ##
- 
-  installation:  
- 
-    run in the root directory
-      rake gem_install
+
+  
+                      RS232-SigmaKoki
     
-    it will compile the gem library and produce a .gem package for ruby
-    it will then install the .gem automatically
+  Ruby interface to Windows Serial Port API
+  
+  author      hugo benichi
+  email       hugo[dot]benichi[at]m4x[dot]org
+  copyright   2012 hugo benichi  
+  version     0.1.3
+
+ 
+  Installation:  
+ 
+    run in the gem root directory:
+    $ rake gem_install
     
-  usage: 
+    It will compile the gem library and produce a .gem package for ruby, and
+    automatically install it
+    
+  Usage: 
   
     cf test/test_rs232-sigmakoki.rb
     
     the list of commands is
       
-      home                # brings back both state to mechanical origin
+      home                # brings back both rotating plates to mechanical origin
       stop                # stop with deceleration
       stop!               # emergency stop
-      status              # current state status
+      status              # current plate driver status
       rom                 # internal rom version
-      ready?
-      busy?               # is the stage ready to accept the next command
+      ready?              # is the stage ready to accept the next command
+      busy?               # is the stage currently executing some command
       jog '++'|'++'|'+-'  # slowly moves both stages in + or - direction
-      move a, b           # move stage 1 of a steps, and stage 2 of b steps (b optional)  
-      move! a, b          # same as move, but wait until the stages are ready             
+      move a [,b]         # move stage 1 of a steps, and stage 2 of b steps
+      move! a [,b]        # same as move, but wait until the stages are ready             
+      amove a [,b]        # move stage 1 to position ax, and stage 2 to b
+      amove! a [,b]       # same as amove, but wait until the stages are ready             
       position            # return the position of both stages
       position_of i       # return the position of stage i (1,2)
