@@ -1,29 +1,29 @@
 
-  
+
                       RS232-SigmaKoki
-    
+
   Ruby interface to Windows Serial Port API
-  
+
   author      hugo benichi
   email       hugo[dot]benichi[at]m4x[dot]org
-  copyright   2012 hugo benichi  
-  version     0.1.3
+  copyright   2012,2013 hugo benichi
+  version     0.1.4
 
- 
-  Installation:  
- 
+
+  Installation:
+
     run in the gem root directory:
     $ rake gem_install
-    
+
     It will compile the gem library and produce a .gem package for ruby, and
     automatically install it
-    
-  Usage: 
-  
+
+  Usage:
+
     cf test/test_rs232-sigmakoki.rb
-    
+
     the list of commands is
-      
+
       home                # brings back both rotating plates to mechanical origin
       stop                # stop with deceleration
       stop!               # emergency stop
@@ -33,8 +33,8 @@
       busy?               # is the stage currently executing some command
       jog '++'|'++'|'+-'  # slowly moves both stages in + or - direction
       move a [,b]         # move stage 1 of a steps, and stage 2 of b steps
-      move! a [,b]        # same as move, but wait until the stages are ready             
+      move! a [,b]        # same as move, but wait until the stages are ready
       amove a [,b]        # move stage 1 to position ax, and stage 2 to b
-      amove! a [,b]       # same as amove, but wait until the stages are ready             
+      amove! a [,b]       # same as amove, but wait until the stages are ready
       position            # return the position of both stages
       position_of i       # return the position of stage i (1,2)
